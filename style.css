@@ -77,14 +77,20 @@ li a:hover{
     justify-content: center;
 }
 
+.card >button{
+    float: right;
+}
 .card{
     width: 20%;
+    margin: 15px;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: aliceblue;
+}
+.card img, h4{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
-    flex-direction: column;
-    box-sizing: border-box;
 }
 
 
@@ -100,7 +106,7 @@ li a:hover{
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 690px) {
     .card {
         width: 50%;
     }
