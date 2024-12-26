@@ -94,6 +94,33 @@ li a:hover{
 }
 
 
+.projectileMotion{
+    background-color: #5f74e0;
+}
+
+input[type="submit"], input[type="reset"]{
+    background-color: #E07A5F;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover{
+    background-color: white;
+    color: #E07A5F;
+    transition: 0.5s;
+}
+input[type="number"]{
+    padding: 10px;
+    width: 50px;
+}
+label{
+    color: white;
+}
+
+
 @media (max-width: 1200px) {
     .card {
         width: 25%; 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectile Motion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="projectileMotion">
+    <header>
+        <ul class="navigation">
+            <li><a href="simulations.html">Simulations</a></li>
+            <li><a href="https://www.massacademy.org/about/">Back to Mass Academy</a></li>
+            <li><a href="https://github.com/JBABGQ/Physics-Engine">Source Code</a></li>
+        </ul>
+    </header>
+    <canvas id="canvas" height="400" width="400"></canvas>
+    <form action="submit">
+        <label for = "VelocityY">Velocity(Y direction)</label><br>
+        <input type="number" id = "VelocityY"> <br>
+        <label for="VelocityX">Velocity (X direction)</label><br>
+        <input type="number" id = "VelocityX"> <br>
+
+        <input type="submit" value="Submit"> 
+        <input type="reset">
+    </form>
+    <script src="projectileMotion.js"></script>
+</body>
+</html>
