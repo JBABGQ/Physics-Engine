@@ -7,7 +7,7 @@ let y = 15;
 let velocityX = parseFloat(document.getElementById("VelocityX").value);
 let velocityY = -1 * parseFloat(document.getElementById("VelocityY").value);
 let acceleration = 9.8;
-let timeStep = 5;
+let timeStep = 0.5;
 let intervalId;
 draw();
 
