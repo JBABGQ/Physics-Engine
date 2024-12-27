@@ -52,7 +52,7 @@ function physicsEngine(){
     velocityX = 0;
     draw();
     message = x;
-    document.querySelector('#output').innerHTML += "The ball landed in " + message;
+    document.querySelector('#output').innerHTML += "The ball's x position is: " + message;
 }
     
 }
