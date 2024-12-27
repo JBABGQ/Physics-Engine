@@ -2,12 +2,12 @@ let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d');
 let height = 400;
 let width = 400;
-let x = 15;
-let y = 15;
+let x = 0;
+let y = 0;
 let velocityX = parseFloat(document.getElementById("VelocityX").value);
-let velocityY = -1 * parseFloat(document.getElementById("VelocityY").value);
+let velocityY = -1.0 * parseFloat(document.getElementById("VelocityY").value);
 let acceleration = 9.8;
-let timeStep = 5;
+let timeStep = 0.1;
 let intervalId;
 draw();
 
@@ -19,7 +19,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     }
 
     velocityX = parseFloat(document.getElementById("VelocityX").value);
-    velocityY = -1 * parseFloat(document.getElementById("VelocityY").value);
+    velocityY = -1.0 * parseFloat(document.getElementById("VelocityY").value);
     acceleration = 9.8;
     draw();
     intervalId = setInterval(physicsEngine, timeStep);
@@ -37,19 +37,25 @@ document.querySelector('form').addEventListener('reset', function(event){
 
 
 function physicsEngine(){
-    if (y <height - (Math.PI * 2)){
-    y += 0.5 * (velocityY + (velocityY+acceleration));
-    velocityY += acceleration;
-    x += velocityX;
+    if (y < height - (Math.PI * 2)){
+    y += (0.5 * acceleration * timeStep*timeStep) + velocityY * timeStep;
+    velocityY += acceleration*timeStep;
+    x += velocityX * timeStep;
     draw();
 } else {
-    y = 400 - (Math.PI * 2);
+    clearInterval(intervalId);
+    velocityY = -1.0 * parseFloat(document.getElementById("VelocityY").value);
+    y = 0;
+    timeToLand = (-velocityY + Math.sqrt((velocityY*velocityY) + 4*(height-y)*4.9))/acceleration
+    x = velocityX * timeToLand;
+    y = 390;
     velocityX = 0;
     draw();
+    message = x;
+    document.querySelector('#output').innerHTML += "The ball landed in " + message;
 }
     
 }
-
 
 function draw()
 {
